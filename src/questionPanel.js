@@ -286,6 +286,8 @@ class QuestionPanel extends React.Component {
                                               renderError={this.props.renderError}
                                               renderRequiredAsterisk={this.props.renderRequiredAsterisk}
                                               validationErrors={this.state.validationErrors}
+                                              pId={this.props.pId}
+                                              sObject={this.props.sObject}
                                               onAnswerChange={this.handleAnswerChange.bind(this)}
                                               onQuestionBlur={this.handleQuestionBlur.bind(this)}
                                               onKeyDown={this.handleInputKeyDown.bind(this)} />

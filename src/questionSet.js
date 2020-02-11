@@ -85,6 +85,8 @@ class QuestionSet extends React.Component {
                       renderRequiredAsterisk={this.props.renderRequiredAsterisk}
                       questionAnswers={this.props.questionAnswers}
                       validationErrors={this.props.validationErrors}
+                      pId={this.props.pId} 
+                      sObject={this.props.sObject}
                       onAnswerChange={this.props.onAnswerChange}
                       onQuestionBlur={this.props.onQuestionBlur}
                       onKeyDown={this.props.onKeyDown} />

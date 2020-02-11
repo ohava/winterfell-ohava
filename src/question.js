@@ -1,5 +1,5 @@
 var React = require('react');
-var _     = require('lodash').noConflict();
+var _ = require('lodash').noConflict();
 
 var InputTypes = require('./inputTypes');
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -92,7 +92,10 @@ class Question extends React.Component {
                                 validationErrors={this.props.validationErrors}
                                 onAnswerChange={this.props.onAnswerChange}
                                 onQuestionBlur={this.props.onQuestionBlur}
-                                onKeyDown={this.props.onKeyDown} />
+                                onKeyDown={this.props.onKeyDown}
+                                pId={this.props.pId}
+                                sObject={this.props.sObject}
+                                />
                 );
               } else {
                 conditionalItems.push(
@@ -114,7 +117,10 @@ class Question extends React.Component {
                             validationErrors={this.props.validationErrors}
                             onAnswerChange={this.props.onAnswerChange}
                             onQuestionBlur={this.props.onQuestionBlur}
-                            onKeyDown={this.props.onKeyDown} />
+                            onKeyDown={this.props.onKeyDown}
+                            pId={this.props.pId}
+                            sObject={this.props.sObject}
+                            />
                 );
               }
             }
@@ -224,6 +230,8 @@ class Question extends React.Component {
                required={this.props.input.required}
                classes={this.props.classes}
                questionAnswers={this.props.questionAnswers}
+               pId={this.props.pId}
+               sObject={this.props.sObject}
                onChange={this.handleInputChange.bind(this, this.props.questionId)}
                onBlur={this.handleInputBlur.bind(this, this.props.questionId)}
                onKeyDown={this.props.onKeyDown}

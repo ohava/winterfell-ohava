@@ -264,6 +264,7 @@ class Winterfell extends React.Component {
     class_name = (this.state.schema.classes.questionPanels !== undefined) ? this.state.schema.classes.questionPanels : '';
     class_name = (currentPanel.questionPanelClass !== undefined) ? class_name + ' ' +currentPanel.questionPanelClass : '';
     return (
+      <React.Fragment>
       <form method={this.props.method}
             encType={this.props.encType}
             action={this.state.action}
@@ -293,9 +294,12 @@ class Winterfell extends React.Component {
                          onValidationErrors={this.props.onValidationErrors}
                          onAddMore={this.handleAddMore.bind(this)}
                          onRemoveMore={this.handleRemoveMore.bind(this)}
+                         pId={this.props.pId}
+                         sObject={this.props.sObject}
             />
         </div>
       </form>
+      </React.Fragment>
     );
   }
 
@@ -328,6 +332,8 @@ Winterfell.defaultProps = {
   disableSubmit          : false,
   renderError            : undefined,
   renderRequiredAsterisk : undefined,
+  pId                    : '',
+  sObject                : {},
   onSubmit               : () => {},
   onUpdate               : () => {},
   onSwitchPanel          : () => {},
