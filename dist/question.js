@@ -95,7 +95,10 @@ var Question = (function (_React$Component) {
                 validationErrors: _this.props.validationErrors,
                 onAnswerChange: _this.props.onAnswerChange,
                 onQuestionBlur: _this.props.onQuestionBlur,
-                onKeyDown: _this.props.onKeyDown }));
+                onKeyDown: _this.props.onKeyDown,
+                pId: _this.props.pId,
+                sObject: _this.props.sObject
+              }));
             } else {
               conditionalItems.push(React.createElement(Question, { key: conditionalQuestion.questionId,
                 questionSetId: _this.props.questionSetId,
@@ -115,7 +118,10 @@ var Question = (function (_React$Component) {
                 validationErrors: _this.props.validationErrors,
                 onAnswerChange: _this.props.onAnswerChange,
                 onQuestionBlur: _this.props.onQuestionBlur,
-                onKeyDown: _this.props.onKeyDown }));
+                onKeyDown: _this.props.onKeyDown,
+                pId: _this.props.pId,
+                sObject: _this.props.sObject
+              }));
             }
           })();
         });
@@ -193,6 +199,8 @@ var Question = (function (_React$Component) {
           required: this.props.input.required,
           classes: this.props.classes,
           questionAnswers: this.props.questionAnswers,
+          pId: this.props.pId,
+          sObject: this.props.sObject,
           onChange: this.handleInputChange.bind(this, this.props.questionId),
           onBlur: this.handleInputBlur.bind(this, this.props.questionId),
           onKeyDown: this.props.onKeyDown

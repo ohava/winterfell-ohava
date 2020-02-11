@@ -266,41 +266,47 @@ var Winterfell = (function (_React$Component) {
       class_name = this.state.schema.classes.questionPanels !== undefined ? this.state.schema.classes.questionPanels : '';
       class_name = currentPanel.questionPanelClass !== undefined ? class_name + ' ' + currentPanel.questionPanelClass : '';
       return React.createElement(
-        'form',
-        { method: this.props.method,
-          encType: this.props.encType,
-          action: this.state.action,
-          ref: function (ref) {
-            return _this3.formComponent = ref;
-          },
-          className: this.state.schema.classes.form },
+        React.Fragment,
+        null,
         React.createElement(
-          'div',
-          { className: class_name },
-          React.createElement(QuestionPanel, { schema: this.state.schema,
-            classes: this.state.schema.classes,
-            panelId: currentPanel.panelId,
-            panelIndex: currentPanel.panelIndex,
-            panelHeader: currentPanel.panelHeader,
-            panelText: currentPanel.panelText,
-            panelHtml: currentPanel.panelHtml,
-            action: currentPanel.action,
-            button: currentPanel.button,
-            backButton: currentPanel.backButton,
-            questionSets: currentPanel.questionSets,
-            addMoreQuestionSets: currentPanel.addMoreQuestionSets,
-            questionAnswers: this.state.questionAnswers,
-            panelHistory: this.panelHistory,
-            renderError: this.props.renderError,
-            renderRequiredAsterisk: this.props.renderRequiredAsterisk,
-            onAnswerChange: this.handleAnswerChange.bind(this),
-            onPanelBack: this.handleBackButtonClick.bind(this),
-            onSwitchPanel: this.handleSwitchPanel.bind(this),
-            onSubmit: this.handleSubmit.bind(this),
-            onValidationErrors: this.props.onValidationErrors,
-            onAddMore: this.handleAddMore.bind(this),
-            onRemoveMore: this.handleRemoveMore.bind(this)
-          })
+          'form',
+          { method: this.props.method,
+            encType: this.props.encType,
+            action: this.state.action,
+            ref: function (ref) {
+              return _this3.formComponent = ref;
+            },
+            className: this.state.schema.classes.form },
+          React.createElement(
+            'div',
+            { className: class_name },
+            React.createElement(QuestionPanel, { schema: this.state.schema,
+              classes: this.state.schema.classes,
+              panelId: currentPanel.panelId,
+              panelIndex: currentPanel.panelIndex,
+              panelHeader: currentPanel.panelHeader,
+              panelText: currentPanel.panelText,
+              panelHtml: currentPanel.panelHtml,
+              action: currentPanel.action,
+              button: currentPanel.button,
+              backButton: currentPanel.backButton,
+              questionSets: currentPanel.questionSets,
+              addMoreQuestionSets: currentPanel.addMoreQuestionSets,
+              questionAnswers: this.state.questionAnswers,
+              panelHistory: this.panelHistory,
+              renderError: this.props.renderError,
+              renderRequiredAsterisk: this.props.renderRequiredAsterisk,
+              onAnswerChange: this.handleAnswerChange.bind(this),
+              onPanelBack: this.handleBackButtonClick.bind(this),
+              onSwitchPanel: this.handleSwitchPanel.bind(this),
+              onSubmit: this.handleSubmit.bind(this),
+              onValidationErrors: this.props.onValidationErrors,
+              onAddMore: this.handleAddMore.bind(this),
+              onRemoveMore: this.handleRemoveMore.bind(this),
+              pId: this.props.pId,
+              sObject: this.props.sObject
+            })
+          )
         )
       );
     }
@@ -339,6 +345,8 @@ Winterfell.defaultProps = {
   disableSubmit: false,
   renderError: undefined,
   renderRequiredAsterisk: undefined,
+  pId: '',
+  sObject: {},
   onSubmit: function onSubmit() {},
   onUpdate: function onUpdate() {},
   onSwitchPanel: function onSwitchPanel() {},

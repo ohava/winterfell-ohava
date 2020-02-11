@@ -340,6 +340,8 @@ var QuestionPanel = (function (_React$Component2) {
           renderError: _this4.props.renderError,
           renderRequiredAsterisk: _this4.props.renderRequiredAsterisk,
           validationErrors: _this4.state.validationErrors,
+          pId: _this4.props.pId,
+          sObject: _this4.props.sObject,
           onAnswerChange: _this4.handleAnswerChange.bind(_this4),
           onQuestionBlur: _this4.handleQuestionBlur.bind(_this4),
           onKeyDown: _this4.handleInputKeyDown.bind(_this4) });

@@ -97,6 +97,8 @@ var QuestionSet = (function (_React$Component) {
             renderRequiredAsterisk: _this.props.renderRequiredAsterisk,
             questionAnswers: _this.props.questionAnswers,
             validationErrors: _this.props.validationErrors,
+            pId: _this.props.pId,
+            sObject: _this.props.sObject,
             onAnswerChange: _this.props.onAnswerChange,
             onQuestionBlur: _this.props.onQuestionBlur,
             onKeyDown: _this.props.onKeyDown });
