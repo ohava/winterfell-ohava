@@ -70,6 +70,8 @@ class Question extends React.Component {
             [].forEach.bind(option.conditionalQuestions, conditionalQuestion => {
               if (conditionalQuestion.questionSetId !== 'undefined') {
                 var QuestionSet;
+                console.log("THIS IS WHERE THE THING IS HAPPENING");
+                console.log(this);
                 if (this._reactInternalFiber._debugOwner !== undefined) {
                   QuestionSet = this._reactInternalFiber._debugOwner.elementType;
                 } else {
