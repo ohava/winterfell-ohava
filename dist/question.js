@@ -76,11 +76,11 @@ var Question = (function (_React$Component) {
               var QuestionSet;
               console.log("THIS IS WHERE THE THING IS HAPPENING");
               console.log(_this);
-              if (_this._reactInternalFiber._debugOwner !== undefined) {
-                QuestionSet = _this._reactInternalFiber._debugOwner.elementType;
+              if (_this._reactInternals._debugOwner !== undefined) {
+                QuestionSet = _this._reactInternals._debugOwner.elementType;
               } else {
                 // @Todo need to change as dynamic .return.return.return
-                QuestionSet = _this._reactInternalFiber['return']['return']['return'].elementType;
+                QuestionSet = _this._reactInternals['return']['return']['return'].elementType;
               }
               conditionalItems.push(React.createElement(QuestionSet, { key: conditionalQuestion.questionSetId,
                 id: conditionalQuestion.questionSetId,

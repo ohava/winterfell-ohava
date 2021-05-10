@@ -72,11 +72,11 @@ class Question extends React.Component {
                 var QuestionSet;
                 console.log("THIS IS WHERE THE THING IS HAPPENING");
                 console.log(this);
-                if (this._reactInternalFiber._debugOwner !== undefined) {
-                  QuestionSet = this._reactInternalFiber._debugOwner.elementType;
+                if (this._reactInternals._debugOwner !== undefined) {
+                  QuestionSet = this._reactInternals._debugOwner.elementType;
                 } else {
                   // @Todo need to change as dynamic .return.return.return
-                  QuestionSet = this._reactInternalFiber.return.return.return.elementType;
+                  QuestionSet = this._reactInternals.return.return.return.elementType;
                 }
                 conditionalItems.push(
                   <QuestionSet key={conditionalQuestion.questionSetId}
