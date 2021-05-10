@@ -74,8 +74,6 @@ var Question = (function (_React$Component) {
           return [].forEach.bind(option.conditionalQuestions, function (conditionalQuestion) {
             if (conditionalQuestion.questionSetId !== 'undefined') {
               var QuestionSet;
-              console.log("THIS IS WHERE THE THING IS HAPPENING");
-              console.log(_this);
               if (_this._reactInternals._debugOwner !== undefined) {
                 QuestionSet = _this._reactInternals._debugOwner.elementType;
               } else {
