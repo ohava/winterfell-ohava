@@ -327,7 +327,7 @@ var QuestionPanel = (function (_React$Component2) {
           return undefined;
         }
 
-        var questionSetComponent = React.createElement(QuestionSet, { key: _this4.props.sObject.id,
+        var questionSetComponent = React.createElement(QuestionSet, { key: _this4.props.sObject.id + questionSet.questionSetId,
           id: questionSet.questionSetId,
           name: questionSet.name,
           questionSetHeader: questionSet.questionSetHeader,

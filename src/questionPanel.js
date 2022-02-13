@@ -273,7 +273,7 @@ class QuestionPanel extends React.Component {
         return undefined;
       }
 
-      const questionSetComponent = <QuestionSet key={this.props.sObject.id}
+      const questionSetComponent = <QuestionSet key={this.props.sObject.id + questionSet.questionSetId}
                                               id={questionSet.questionSetId}
                                               name={questionSet.name}
                                               questionSetHeader={questionSet.questionSetHeader}
