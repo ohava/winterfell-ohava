@@ -293,7 +293,7 @@ class QuestionPanel extends React.Component {
                                               onKeyDown={this.handleInputKeyDown.bind(this)} />
 
       return (
-        <QuestionSetWrapper questionSetWrapper={questionSet.questionSetWrapper} questionSet={questionSetComponent} addMoreQuestionSets={this.props.addMoreQuestionSets} onAddMore={this.props.onAddMore} onRemoveMore={this.props.onRemoveMore} questionSetId={questionSet.questionSetId} questionAnswers={this.props.questionAnswers} />
+        <QuestionSetWrapper key={this.props.sObject.id + questionSet.questionSetId} questionSetWrapper={questionSet.questionSetWrapper} questionSet={questionSetComponent} addMoreQuestionSets={this.props.addMoreQuestionSets} onAddMore={this.props.onAddMore} onRemoveMore={this.props.onRemoveMore} questionSetId={questionSet.questionSetId} questionAnswers={this.props.questionAnswers} />
       );
     });
 

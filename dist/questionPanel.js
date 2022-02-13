@@ -346,7 +346,7 @@ var QuestionPanel = (function (_React$Component2) {
           onQuestionBlur: _this4.handleQuestionBlur.bind(_this4),
           onKeyDown: _this4.handleInputKeyDown.bind(_this4) });
 
-        return React.createElement(QuestionSetWrapper, { questionSetWrapper: questionSet.questionSetWrapper, questionSet: questionSetComponent, addMoreQuestionSets: _this4.props.addMoreQuestionSets, onAddMore: _this4.props.onAddMore, onRemoveMore: _this4.props.onRemoveMore, questionSetId: questionSet.questionSetId, questionAnswers: _this4.props.questionAnswers });
+        return React.createElement(QuestionSetWrapper, { key: _this4.props.sObject.id + questionSet.questionSetId, questionSetWrapper: questionSet.questionSetWrapper, questionSet: questionSetComponent, addMoreQuestionSets: _this4.props.addMoreQuestionSets, onAddMore: _this4.props.onAddMore, onRemoveMore: _this4.props.onRemoveMore, questionSetId: questionSet.questionSetId, questionAnswers: _this4.props.questionAnswers });
       });
 
       function createMarkup(panelHtml) {
