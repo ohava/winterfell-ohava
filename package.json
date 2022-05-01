@@ -46,7 +46,7 @@
     "react-test-renderer": "^17.0.2",
     "resize-polyfill": "^1.1.1",
     "resolve-url-loader": "^3.0.1",
-    "validator": "^4.0.5"
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "babel": "^5.8.23",
