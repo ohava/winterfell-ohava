@@ -78,7 +78,7 @@ class QuestionSetWrapper extends React.Component {
           
           : 
           
-          {questionSet}
+          questionSet
           
           }
 

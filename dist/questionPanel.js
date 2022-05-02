@@ -99,7 +99,7 @@ var QuestionSetWrapper = (function (_React$Component) {
             'div',
             { style: { border: "5px solid red" } },
             questionSet
-          ) : { questionSet: questionSet },
+          ) : questionSet,
           (showAddMore || showRemoveMore) && React.createElement(
             'div',
             { className: 'd-flex justify-content-end' },
