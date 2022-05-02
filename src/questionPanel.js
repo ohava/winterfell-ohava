@@ -94,8 +94,7 @@ class QuestionSetWrapper extends React.Component {
         <React.Fragment>
           {showAddMore || showRemoveMore ? (
             <div
-              className='wf-add-more-question-set'
-              style={{ borderTop: '2px solid #888' }}
+              className='wf-add-more-question-set'            
             >
               {questionSet}
 

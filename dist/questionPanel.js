@@ -101,8 +101,7 @@ var QuestionSetWrapper = (function (_React$Component) {
           showAddMore || showRemoveMore ? React.createElement(
             'div',
             {
-              className: 'wf-add-more-question-set',
-              style: { borderTop: '2px solid #888' }
+              className: 'wf-add-more-question-set'
             },
             questionSet,
             React.createElement(
