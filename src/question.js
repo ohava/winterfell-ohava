@@ -211,7 +211,8 @@ class Question extends React.Component {
                 {this.props.text}
               </small>
             )
-          : undefined}                   
+          : undefined}
+          {!this.props.input.required && <small>Optional()</small>}                   
               </label>
             )
           : undefined}
