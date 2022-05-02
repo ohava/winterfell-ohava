@@ -100,7 +100,7 @@ var QuestionSetWrapper = (function (_React$Component) {
           null,
           showAddMore || showRemoveMore ? React.createElement(
             'div',
-            { style: { border: '5px solid red' } },
+            { style: { borderTop: '2px solid #888' } },
             questionSet
           ) : questionSet,
           (showAddMore || showRemoveMore) && React.createElement(
