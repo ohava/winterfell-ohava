@@ -179,13 +179,9 @@ var Question = (function (_React$Component) {
             htmlFor: this.props.questionId },
           this.props.question,
           !this.props.input.required && React.createElement(
-            'span',
-            null,
-            React.createElement(
-              'small',
-              null,
-              '(optional)'
-            )
+            'sup',
+            { className: 'optionl-question' },
+            '(optional)'
           ),
           typeof this.props.renderRequiredAsterisk !== 'undefined' && this.props.input.required ? this.props.renderRequiredAsterisk() : undefined,
           !!this.props.text ? React.createElement(
