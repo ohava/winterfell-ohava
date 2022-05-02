@@ -95,27 +95,31 @@ var QuestionSetWrapper = (function (_React$Component) {
         return React.createElement(
           React.Fragment,
           null,
-          questionSet,
-          (showAddMore || showRemoveMore) && React.createElement(
+          React.createElement(
             'div',
-            { className: 'd-flex justify-content-end' },
-            showAddMore && React.createElement(
-              'a',
-              { href: 'javascript:;', className: addMoreButtonClass, onClick: function () {
-                  return _this.props.onAddMore(addMoreName);
-                } },
-              React.createElement(_fortawesomeReactFontawesome.FontAwesomeIcon, { icon: 'plus', className: 'fa-fw' }),
-              ' ',
-              addMoreButton
-            ),
-            showRemoveMore && React.createElement(
-              'a',
-              { href: 'javascript:;', className: removeMoreButtonClass, onClick: function () {
-                  return _this.props.onRemoveMore(addMoreName, originalQuestionSets, removeQuestionSetIndex, removeQuestionSets[removeQuestionSetIndex]);
-                } },
-              React.createElement(_fortawesomeReactFontawesome.FontAwesomeIcon, { icon: 'minus', className: 'fa-fw' }),
-              ' ',
-              removeMoreButton
+            { style: { border: "5px solid red" } },
+            questionSet,
+            (showAddMore || showRemoveMore) && React.createElement(
+              'div',
+              { className: 'd-flex justify-content-end' },
+              showAddMore && React.createElement(
+                'a',
+                { href: 'javascript:;', className: addMoreButtonClass, onClick: function () {
+                    return _this.props.onAddMore(addMoreName);
+                  } },
+                React.createElement(_fortawesomeReactFontawesome.FontAwesomeIcon, { icon: 'plus', className: 'fa-fw' }),
+                ' ',
+                addMoreButton
+              ),
+              showRemoveMore && React.createElement(
+                'a',
+                { href: 'javascript:;', className: removeMoreButtonClass, onClick: function () {
+                    return _this.props.onRemoveMore(addMoreName, originalQuestionSets, removeQuestionSetIndex, removeQuestionSets[removeQuestionSetIndex]);
+                  } },
+                React.createElement(_fortawesomeReactFontawesome.FontAwesomeIcon, { icon: 'minus', className: 'fa-fw' }),
+                ' ',
+                removeMoreButton
+              )
             )
           )
         );
