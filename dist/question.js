@@ -180,7 +180,7 @@ var Question = (function (_React$Component) {
           this.props.question,
           !this.props.input.required && React.createElement(
             'sup',
-            { className: 'optionl-question' },
+            { className: 'optional-question' },
             '(optional)'
           ),
           typeof this.props.renderRequiredAsterisk !== 'undefined' && this.props.input.required ? this.props.renderRequiredAsterisk() : undefined,
