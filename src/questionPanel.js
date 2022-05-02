@@ -93,41 +93,48 @@ class QuestionSetWrapper extends React.Component {
       return (
         <React.Fragment>
           {showAddMore || showRemoveMore ? (
-            <div style={{ borderTop: '2px solid #888' }}>{questionSet}</div>
+            <div
+              className='wf-add-more-question-set'
+              style={{ borderTop: '2px solid #888' }}
+            >
+              {questionSet}
+
+              <div>
+                {(showAddMore || showRemoveMore) && (
+                  <div className='d-flex justify-content-end'>
+                    {showAddMore && (
+                      <a
+                        href='javascript:;'
+                        className="add-more-control"
+                        onClick={() => this.props.onAddMore(addMoreName)}
+                      >
+                        <FontAwesomeIcon icon='plus' className='fa-fw' />{' '}
+                        {addMoreButton}
+                      </a>
+                    )}
+                    {showRemoveMore && (
+                      <a
+                        href='javascript:;'
+                        className="remove-control"
+                        onClick={() =>
+                          this.props.onRemoveMore(
+                            addMoreName,
+                            originalQuestionSets,
+                            removeQuestionSetIndex,
+                            removeQuestionSets[removeQuestionSetIndex]
+                          )
+                        }
+                      >
+                        <FontAwesomeIcon icon='minus' className='fa-fw' />{' '}
+                        {removeMoreButton}
+                      </a>
+                    )}
+                  </div>
+                )}
+              </div>
+            </div>
           ) : (
             questionSet
-          )}
-
-          {(showAddMore || showRemoveMore) && (
-            <div className='d-flex justify-content-end'>
-              {showAddMore && (
-                <a
-                  href='javascript:;'
-                  className={addMoreButtonClass}
-                  onClick={() => this.props.onAddMore(addMoreName)}
-                >
-                  <FontAwesomeIcon icon='plus' className='fa-fw' />{' '}
-                  {addMoreButton}
-                </a>
-              )}
-              {showRemoveMore && (
-                <a
-                  href='javascript:;'
-                  className={removeMoreButtonClass}
-                  onClick={() =>
-                    this.props.onRemoveMore(
-                      addMoreName,
-                      originalQuestionSets,
-                      removeQuestionSetIndex,
-                      removeQuestionSets[removeQuestionSetIndex]
-                    )
-                  }
-                >
-                  <FontAwesomeIcon icon='minus' className='fa-fw' />{' '}
-                  {removeMoreButton}
-                </a>
-              )}
-            </div>
           )}
         </React.Fragment>
       )
