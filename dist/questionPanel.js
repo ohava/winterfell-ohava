@@ -89,15 +89,18 @@ var QuestionSetWrapper = (function (_React$Component) {
       }
       if (questionSetWrapper) {
         var element = questionSetWrapper.element ? questionSetWrapper.element : 'div';
-        var children = React.createElement(QuestionSetWrapper, { questionSetWrapper: questionSetWrapper.children, questionSet: questionSet });
+        var children = React.createElement(QuestionSetWrapper, {
+          questionSetWrapper: questionSetWrapper.children,
+          questionSet: questionSet
+        });
         return React.createElement(element, { className: questionSetWrapper.className }, children);
       } else {
         return React.createElement(
           React.Fragment,
           null,
-          showAddMore ? React.createElement(
+          showAddMore || showRemoveMore ? React.createElement(
             'div',
-            { style: { border: "5px solid red" } },
+            { style: { border: '5px solid red' } },
             questionSet
           ) : questionSet,
           (showAddMore || showRemoveMore) && React.createElement(
@@ -105,18 +108,26 @@ var QuestionSetWrapper = (function (_React$Component) {
             { className: 'd-flex justify-content-end' },
             showAddMore && React.createElement(
               'a',
-              { href: 'javascript:;', className: addMoreButtonClass, onClick: function () {
+              {
+                href: 'javascript:;',
+                className: addMoreButtonClass,
+                onClick: function () {
                   return _this.props.onAddMore(addMoreName);
-                } },
+                }
+              },
               React.createElement(_fortawesomeReactFontawesome.FontAwesomeIcon, { icon: 'plus', className: 'fa-fw' }),
               ' ',
               addMoreButton
             ),
             showRemoveMore && React.createElement(
               'a',
-              { href: 'javascript:;', className: removeMoreButtonClass, onClick: function () {
+              {
+                href: 'javascript:;',
+                className: removeMoreButtonClass,
+                onClick: function () {
                   return _this.props.onRemoveMore(addMoreName, originalQuestionSets, removeQuestionSetIndex, removeQuestionSets[removeQuestionSetIndex]);
-                } },
+                }
+              },
               React.createElement(_fortawesomeReactFontawesome.FontAwesomeIcon, { icon: 'minus', className: 'fa-fw' }),
               ' ',
               removeMoreButton
@@ -129,8 +140,6 @@ var QuestionSetWrapper = (function (_React$Component) {
 
   return QuestionSetWrapper;
 })(React.Component);
-
-;
 
 var QuestionPanel = (function (_React$Component2) {
   _inherits(QuestionPanel, _React$Component2);
@@ -252,7 +261,6 @@ var QuestionPanel = (function (_React$Component2) {
        * the action decided upon.
        */
       switch (action.action) {
-
         case 'GOTO':
           this.props.onSwitchPanel(action.target);
           break;
@@ -331,7 +339,8 @@ var QuestionPanel = (function (_React$Component2) {
           return undefined;
         }
 
-        var questionSetComponent = React.createElement(QuestionSet, { key: _this4.props.sObject.id + questionSet.questionSetId,
+        var questionSetComponent = React.createElement(QuestionSet, {
+          key: _this4.props.sObject.id + questionSet.questionSetId,
           id: questionSet.questionSetId,
           name: questionSet.name,
           questionSetHeader: questionSet.questionSetHeader,
@@ -348,9 +357,19 @@ var QuestionPanel = (function (_React$Component2) {
           sObject: _this4.props.sObject,
           onAnswerChange: _this4.handleAnswerChange.bind(_this4),
           onQuestionBlur: _this4.handleQuestionBlur.bind(_this4),
-          onKeyDown: _this4.handleInputKeyDown.bind(_this4) });
+          onKeyDown: _this4.handleInputKeyDown.bind(_this4)
+        });
 
-        return React.createElement(QuestionSetWrapper, { key: _this4.props.sObject.id + questionSet.questionSetId, questionSetWrapper: questionSet.questionSetWrapper, questionSet: questionSetComponent, addMoreQuestionSets: _this4.props.addMoreQuestionSets, onAddMore: _this4.props.onAddMore, onRemoveMore: _this4.props.onRemoveMore, questionSetId: questionSet.questionSetId, questionAnswers: _this4.props.questionAnswers });
+        return React.createElement(QuestionSetWrapper, {
+          key: _this4.props.sObject.id + questionSet.questionSetId,
+          questionSetWrapper: questionSet.questionSetWrapper,
+          questionSet: questionSetComponent,
+          addMoreQuestionSets: _this4.props.addMoreQuestionSets,
+          onAddMore: _this4.props.onAddMore,
+          onRemoveMore: _this4.props.onRemoveMore,
+          questionSetId: questionSet.questionSetId,
+          questionAnswers: _this4.props.questionAnswers
+        });
       });
 
       function createMarkup(panelHtml) {
@@ -377,22 +396,34 @@ var QuestionPanel = (function (_React$Component2) {
             { className: this.props.classes.questionPanelText },
             this.props.panelText
           ) : undefined,
-          typeof this.props.panelHtml !== 'undefined' ? React.createElement('div', { dangerouslySetInnerHTML: createMarkup(this.props.panelHtml) }) : undefined
+          typeof this.props.panelHtml !== 'undefined' ? React.createElement('div', {
+            dangerouslySetInnerHTML: createMarkup(this.props.panelHtml)
+          }) : undefined
         ) : undefined,
         React.createElement(
           'div',
-          { className: this.props.classes.questionSets + this.props.questionPanelClass },
+          {
+            className: this.props.classes.questionSets + this.props.questionPanelClass
+          },
           questionSets
         ),
         React.createElement(
           'div',
           { className: this.props.classes.buttonBar },
-          this.props.panelHistory.length > 1 && !this.props.backButton.disabled ? React.createElement(Button, { text: this.props.backButton.text || 'Back', condition: this.props.button.condition, questionAnswers: this.props.questionAnswers,
+          this.props.panelHistory.length > 1 && !this.props.backButton.disabled ? React.createElement(Button, {
+            text: this.props.backButton.text || 'Back',
+            condition: this.props.button.condition,
+            questionAnswers: this.props.questionAnswers,
             onClick: this.handleBackButtonClick.bind(this),
-            className: this.props.classes.backButton }) : undefined,
-          !this.props.button.disabled ? React.createElement(Button, { text: this.props.button.text, condition: this.props.button.condition, questionAnswers: this.props.questionAnswers,
+            className: this.props.classes.backButton
+          }) : undefined,
+          !this.props.button.disabled ? React.createElement(Button, {
+            text: this.props.button.text,
+            condition: this.props.button.condition,
+            questionAnswers: this.props.questionAnswers,
             onClick: this.handleMainButtonClick.bind(this),
-            className: this.props.classes.controlButton }) : undefined
+            className: this.props.classes.controlButton
+          }) : undefined
         )
       );
     }
@@ -400,8 +431,6 @@ var QuestionPanel = (function (_React$Component2) {
 
   return QuestionPanel;
 })(React.Component);
-
-;
 
 QuestionPanel.defaultProps = {
   validationErrors: {},
