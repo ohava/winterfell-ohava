@@ -201,6 +201,7 @@ class Question extends React.Component {
                      id={labelId}
                      htmlFor={this.props.questionId}>
                 {this.props.question}
+                {!this.props.input.required && <span><small>(optional)</small></span>}   
                 {typeof this.props.renderRequiredAsterisk !== 'undefined'
                    && this.props.input.required
                    ? this.props.renderRequiredAsterisk()
@@ -216,7 +217,7 @@ class Question extends React.Component {
               </label>
             )
           : undefined}
-          {!this.props.input.required && <small>Optional()</small>}                   
+                          
 
         <Input name={this.props.questionId}
                id={this.props.questionId}

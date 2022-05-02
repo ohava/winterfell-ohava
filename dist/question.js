@@ -178,6 +178,15 @@ var Question = (function (_React$Component) {
             id: labelId,
             htmlFor: this.props.questionId },
           this.props.question,
+          !this.props.input.required && React.createElement(
+            'span',
+            null,
+            React.createElement(
+              'small',
+              null,
+              '(optional)'
+            )
+          ),
           typeof this.props.renderRequiredAsterisk !== 'undefined' && this.props.input.required ? this.props.renderRequiredAsterisk() : undefined,
           !!this.props.text ? React.createElement(
             'small',
@@ -185,11 +194,6 @@ var Question = (function (_React$Component) {
             this.props.text
           ) : undefined
         ) : undefined,
-        !this.props.input.required && React.createElement(
-          'small',
-          null,
-          'Optional()'
-        ),
         React.createElement(Input, _extends({ name: this.props.questionId,
           id: this.props.questionId,
           labelId: labelId,
