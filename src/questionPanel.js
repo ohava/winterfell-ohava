@@ -66,6 +66,7 @@ class QuestionSetWrapper extends React.Component {
     } else {
       return (
         <React.Fragment>
+          <div style={{border: "5px solid red"}}>
           {questionSet}
           {(showAddMore || showRemoveMore) && (
             <div className="d-flex justify-content-end">
@@ -77,6 +78,7 @@ class QuestionSetWrapper extends React.Component {
               )}
             </div>
           )}
+          </div>
         </React.Fragment>
       );
     }
