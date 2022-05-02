@@ -212,10 +212,11 @@ class Question extends React.Component {
               </small>
             )
           : undefined}
-          {!this.props.input.required && <small>Optional()</small>}                   
+          
               </label>
             )
           : undefined}
+          {!this.props.input.required && <small>Optional()</small>}                   
 
         <Input name={this.props.questionId}
                id={this.props.questionId}

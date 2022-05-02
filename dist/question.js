@@ -183,13 +183,13 @@ var Question = (function (_React$Component) {
             'small',
             { className: this.props.classes.questionText },
             this.props.text
-          ) : undefined,
-          !this.props.input.required && React.createElement(
-            'small',
-            null,
-            'Optional()'
-          )
+          ) : undefined
         ) : undefined,
+        !this.props.input.required && React.createElement(
+          'small',
+          null,
+          'Optional()'
+        ),
         React.createElement(Input, _extends({ name: this.props.questionId,
           id: this.props.questionId,
           labelId: labelId,
